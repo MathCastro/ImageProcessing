@@ -84,7 +84,7 @@ Matual(1) = 260;
 Matual(2) = 415;
 Menores(1) = (((Matual(1) - 815)^2 + (Matual(2) - 1000)^2)^(1/2));
 
-while Matual(1) ~= 815 || Matual(2) ~= 1000
+while Matual(1) ~= 815 && Matual(2) ~= 1000
     for i = 1:3
         for j = 1:3
             NeighbourPixels(i,j) = ((((Matual(1) + (i-2)) - 815)^2 + ((Matual(2) + (j-2)) - 1000)^2)^(1/2));
@@ -111,7 +111,7 @@ while Matual(1) ~= 815 || Matual(2) ~= 1000
     end
 
     for i = 1:3
-        if Menores(i,4) > Menores(1,4)
+        if Menores(i,4) < Menores(1,4)
             Menores(1,4) = Menores(i,4);
             Menores(1,2) = Menores(i,2);
             Menores(1,3) = Menores(i,3);
